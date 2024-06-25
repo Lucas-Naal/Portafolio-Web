@@ -1,0 +1,54 @@
+---
+const pageTitle = "Sobre Mi";
+
+const identity = {
+    fistName: "Luis Fernando Naal Pacheco",
+    country: "México",
+    occupation: "Esudiante Universitario",
+    hobbies: ["Gaming", "Naturaleza", "Música", "Programación", "Tecnología"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Node", "Flutter"];
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+        <a href="/blog">Blog</a>
+
+		<h1>{pageTitle}</h1>
+        <h2>Mi Sitio Astro</h2>
+        
+        <p>He aquí algunas cosas sobre mi: </p>
+        <ul>
+            <li>Me llamo {identity.fistName}.</li>
+            <li>Vivo en {identity.country} y mi ocupacion actual es {identity.occupation}</li>
+
+            {identity.hobbies.length >= 2 && 
+            <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+            }
+
+        </ul>
+
+        <p>Mis habilidades son:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+
+        <ul>
+            <li><a href="/posts/post-1">Publicacion 1</a></li>
+            <li><a href="/posts/post-2">Publicacion 2</a></li>
+            <li><a href="/posts/post-3">Publicacion 3</a></li>
+        </ul>
+	</body>
+</html>
